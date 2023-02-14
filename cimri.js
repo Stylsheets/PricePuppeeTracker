@@ -1,26 +1,29 @@
 import puppeteer from 'puppeteer';
 import { setTimeout } from 'timers/promises';
 
-export async function getCimriPrice() {
-  const browser = await puppeteer.launch();
+export async function getCimriPrice(url) {
+  const browser = await puppeteer.launch({
+    executablePath: '/usr/bin/google-chrome-stable' // Linux
+  });
   const page = await browser.newPage();
   await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36');
 
-  await page.goto('https://www.cimri.com/islemci/en-ucuz-amd-ryzen-5-5600x-3-7-ghz-soket-am4-32-mb-cache-65-w-islemci-fiyatlari,670190923', { waitUntil: 'networkidle2' });
+  await page.goto(url, { waitUntil: 'networkidle2' });
   await page.screenshot({ path: 'scr/cimri-screenshot1.png' });
-  console.log('page loaded');
 
-  let url = page.url();
   await setTimeout(250);
 
+  await page.waitForSelector('.s1wl91l5-4.cBVHJG');
+
   let [price] = await page.evaluate(() => {
-    let price = parseFloat(document.querySelectorAll('.dekHBg')[2].textContent.split(' ')[0].replaceAll('.', ''));
+    let price = parseFloat(document.querySelector('.s1wl91l5-4.cBVHJG').textContent.split(' ')[0].replaceAll('.', '').replaceAll(',', '.'));
     return [price];
   })
-  console.log('cimri price', price);
 
   await page.screenshot({ path: 'scr/cimri-screenshot4.png' });
-  console.log('SUCCESS');
 
   await browser.close();
+  return { price };
 }
+
+export default getCimriPrice;

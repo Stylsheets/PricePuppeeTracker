@@ -5,6 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
     "esm": "^3.2.25",
     "puppeteer": "^19.7.0"
