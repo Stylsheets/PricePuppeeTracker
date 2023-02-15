@@ -1,0 +1,6 @@
+---
+services:
+  price-tracker:
+    build: .
+    env_file:
+      - .env
