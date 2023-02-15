@@ -1,10 +1,9 @@
 import puppeteer from 'puppeteer';
+import pupOpts from './pup-opts.js';
 import { setTimeout } from 'timers/promises';
 
 export async function getCimriPrice(url) {
-  const browser = await puppeteer.launch({
-    executablePath: '/usr/bin/google-chrome-stable' // Linux
-  });
+  const browser = await puppeteer.launch(pupOpts);
   const page = await browser.newPage();
   await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36');
 

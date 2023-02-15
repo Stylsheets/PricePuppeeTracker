@@ -1,12 +1,12 @@
-FROM node:16-alpine
-
+FROM ghcr.io/puppeteer/puppeteer:19.7.0
 WORKDIR /app
-COPY yarn.lock .
+COPY --chown=pptruser yarn.lock .
 RUN yarn install --frozen-lockfile
 
-FROM node:16-alpine
+FROM ghcr.io/puppeteer/puppeteer:19.7.0
 WORKDIR /app
 COPY --from=0 /app/node_modules .
-COPY . .
+COPY --chown=pptruser . .
+RUN yarn install --frozen-lockfile
 
 CMD ["yarn", "start"]

@@ -17,7 +17,9 @@ client.once(Events.ClientReady, (c) => {
 client.login(process.env.TOKEN);
 
 async function main() {
-  client.on("ready", () => {
+  client.on("ready", async () => {
+    const items = await getLowestPriceOfAllItems();
+    await fs.writeFile(itemsFile, JSON.stringify(items));
     setInterval(async () => {
       const items = await getLowestPriceOfAllItems();
       await fs.writeFile(itemsFile, JSON.stringify(items));
@@ -38,6 +40,10 @@ async function getLowestPriceOfAllItems() {
       client.channels.fetch(process.env.CHANNEL_ID).then(channel => {
         channel.send(`<@319141014755475467> ${item.name} is now ${price} TL`);
       });
+    } else {
+      client.channels.fetch(process.env.CHANNEL_ID).then(channel => {
+        channel.send(`${item.name} is now ${price} TL`);
+      });
     }
   }
   return items;
@@ -50,7 +56,6 @@ async function getLowestPrice(item) {
   if (isNaN(akakcePrice) || isNaN(cimriPrice)) {
     throw Error('At least one of the prices is null!');
   }
-
 
   // Select the lowest
   return Math.min(akakcePrice, cimriPrice);
