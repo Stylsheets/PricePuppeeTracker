@@ -9,5 +9,8 @@
     "dotenv": "^16.0.3",
     "esm": "^3.2.25",
     "puppeteer": "^19.7.0"
+  },
+  "scripts": {
+    "start": "node ."
   }
 }
