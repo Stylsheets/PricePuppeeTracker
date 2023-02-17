@@ -33,16 +33,22 @@ async function getLowestPriceOfAllItems() {
     console.log(`Checking ${item.name}`);
     let price = await getLowestPrice(item).catch(console.log);
     console.log(`Price of ${item.name} is ${price} TL`);
-    item.price = price == 0 ? item.price : price;
 
-    if (item.price < item.lowestPrice) {
-      item.lowestPrice = item.price;
+    // if (item.price < item.lowestPrice) {
+    //   item.lowestPrice = item.price;
+    //   client.channels.fetch(process.env.CHANNEL_ID).then(channel => {
+    //     channel.send(`<@319141014755475467> ${item.name} is now ${price} TL`);
+    //   });
+    // } else {
+    //   client.channels.fetch(process.env.CHANNEL_ID).then(channel => {
+    //     channel.send(`${item.name} is now ${price} TL`);
+    //   });
+    // }
+    if (price != item.price) {
+      item.price = price == 0 ? item.price : price;
+      item.lowestPrice = price < item.lowestPrice ? price : item.lowestPrice;
       client.channels.fetch(process.env.CHANNEL_ID).then(channel => {
-        channel.send(`<@319141014755475467> ${item.name} is now ${price} TL`);
-      });
-    } else {
-      client.channels.fetch(process.env.CHANNEL_ID).then(channel => {
-        channel.send(`${item.name} is now ${price} TL`);
+        channel.send(`<@319141014755475467> lowest price of ${item.name} is now ${item.lowestPrice} and current price is ${price} TL`);
       });
     }
   }
