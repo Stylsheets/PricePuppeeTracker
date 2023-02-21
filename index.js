@@ -44,11 +44,12 @@ async function getLowestPriceOfAllItems() {
     //     channel.send(`${item.name} is now ${price} TL`);
     //   });
     // }
-    if (price != item.price) {
-      item.price = price == 0 ? item.price : price;
-      item.lowestPrice = price < item.lowestPrice ? price : item.lowestPrice;
+    if (!!price && price != item.price) {
+      const prevPrice = item.price;
+      item.price = price;
+      item.lowestPrice = item.price < item.lowestPrice ? item.price : item.lowestPrice;
       client.channels.fetch(process.env.CHANNEL_ID).then(channel => {
-        channel.send(`<@319141014755475467> lowest price of ${item.name} is now ${item.lowestPrice} and current price is ${price} TL`);
+        channel.send(`<@319141014755475467> Price of ${item.name} TL has changed. New Price: ${price}\nPrevious Price: ${prevPrice} TL | Lowest Price: ${item.lowestPrice}`);
       });
     }
   }
