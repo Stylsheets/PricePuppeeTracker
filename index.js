@@ -49,7 +49,7 @@ async function getLowestPriceOfAllItems() {
       item.price = price;
       item.lowestPrice = item.price < item.lowestPrice ? item.price : item.lowestPrice;
       client.channels.fetch(process.env.CHANNEL_ID).then(channel => {
-        channel.send(`<@319141014755475467> Price of ${item.name} TL has changed. New Price: ${price}\nPrevious Price: ${prevPrice} TL | Lowest Price: ${item.lowestPrice}`);
+        channel.send(`<@${item.discordUserId}> Price of ${item.name} TL has changed. New Price: ${price}\nPrevious Price: ${prevPrice || '<no data>'} TL | Lowest Price: ${item.lowestPrice}`);
       });
     }
   }

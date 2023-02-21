@@ -4,41 +4,47 @@
     "akakce": "https://www.akakce.com/islemci/en-ucuz-amd-ryzen-5-5600x-alti-cekirdek-3-70-ghz-kutulu-fiyati,920045297.html",
     "name": "Ryzen 5 5600x Kutulu",
     "price": null,
-    "lowestPrice": "10000"
+    "lowestPrice": "10000",
+    "discordUserId": "319141014755475467"
   },
   {
     "cimri": "https://www.cimri.com/en-ucuz-msi-mb-b550-gaming-gen3-am4-b550-ddr4-4400oc-hdmi-dvi-d-1xm-2-usb3-2-atx-anakart-fiyatlari,2107492997",
     "akakce": "https://www.akakce.com/anakart/en-ucuz-msi-b550-gaming-gen3-amd-am4-ddr4-atx-fiyati,238853257.html",
     "name": "MSI B550 Gaming Gen3",
     "price": null,
-    "lowestPrice": "10000"
+    "lowestPrice": "10000",
+    "discordUserId": "319141014755475467"
   },
   {
     "cimri": "https://www.cimri.com/en-ucuz-gskill-ripjawsv-siyah-ddr4-4000mhz-cl18-32gb-2x16gb-dual-18-22-22-42-1-40v-f4-4000c18d-32gvk-fiyatlari,1495259161",
     "akakce": "https://www.akakce.com/ram/en-ucuz-g-skill-ripjaws-v-32-gb-2x16-4000-mhz-ddr4-cl18-f4-4000c18d-32gvk-fiyati,1042937083.html",
     "name": "G.Skill Ripjaws V 32 GB 2x16 4000 MHz DDR4 CL18",
     "price": null,
-    "lowestPrice": "10000"
+    "lowestPrice": "10000",
+    "discordUserId": "319141014755475467"
   },
   {
     "cimri": "https://www.cimri.com/ekran-kartlari/en-ucuz-gigabyte-eagle-geforce-rtx3050-8gb-gddr6-pci-express-4-0-gv-n3050eagle-8gd-gaming-ekran-karti-fiyatlari,1400378007",
     "akakce": "https://www.akakce.com/ekran-karti/en-ucuz-gigabyte-eagle-geforce-rtx3050-8gb-gddr6-pci-express-4-0-gv-n3050eagle-8gd-gaming-fiyati,1724300248.html",
     "name": "Gigabyte Eagle GeForce RTX3050 8GB GDDR6 PCI Express 4.0",
     "price": null,
-    "lowestPrice": "10000"
+    "lowestPrice": "10000",
+    "discordUserId": "319141014755475467"
   },
   {
     "cimri": "https://www.cimri.com/power-supply/en-ucuz-cooler-master-mpe-7501-acabw-beu-v2-mwe-bronze-750-w-80-bronze-power-supply-fiyatlari,679819050",
     "akakce": "https://www.akakce.com/power-supply/en-ucuz-cooler-master-mwe-750w-mpe-7501-acabw-beu-fiyati,828340123.html",
     "name": "Cooler Master MWE 750W",
     "price": null,
-    "lowestPrice": "10000"
+    "lowestPrice": "10000",
+    "discordUserId": "319141014755475467"
   },
   {
     "cimri": "https://www.cimri.com/ssd-solid-state-drive/en-ucuz-samsung-mz-v8v1t0bw-1tb-980-35003000mb-nvme-m-2-ssd-fiyatlari,783284539",
     "akakce": "https://www.akakce.com/ssd/en-ucuz-samsung-1-tb-980-mz-v8v1t0bw-m-2-pci-express-3-0-fiyati,1071263472.html",
     "name": "Samsung 1 TB 980 MZ-V8V1T0BW M.2 PCI Express 3.0",
     "price": null,
-    "lowestPrice": "10000"
+    "lowestPrice": "10000",
+    "discordUserId": "319141014755475467"
   }
 ]
