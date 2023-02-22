@@ -2,12 +2,12 @@ import { Client, Events, GatewayIntentBits } from "discord.js";
 
 import { getAkakcePrice } from "./akakce.js";
 import { getCimriPrice } from "./cimri.js";
-import items from "./items.json" assert { type: "json" };
+import items from "./items/items.json" assert { type: "json" };
 import dotenv from "dotenv";
 import fs from 'fs/promises';
 dotenv.config();
 
-const itemsFile = './items.json';
+const itemsFile = './items/items.json';
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.once(Events.ClientReady, (c) => {
