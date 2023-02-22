@@ -4,5 +4,3 @@ services:
     build: .
     env_file:
       - .env
-    volumes:
-      - ./items:/app/items
